@@ -54,23 +54,25 @@ goto start
 :install
 cls
 echo "Installing Context Menu Switch"
-if not exist "C:\RaphaelJaeger" mkdir "C\RaphaelJaeger"
+if not exist "C:\RaphaelJaeger" mkdir "C:\RaphaelJaeger"
 curl https://raw.githubusercontent.com/EasyArt/Win11DesignSwitch/main/Win11DesignSwitch.reg > C:\RaphaelJaeger\Win11DesignSwitch.reg
 curl https://raw.githubusercontent.com/EasyArt/Win11DesignSwitch/main/EXWin10.bat > C:\RaphaelJaeger\EXWin10.bat
 curl https://raw.githubusercontent.com/EasyArt/Win11DesignSwitch/main/EXWin11.bat > C:\RaphaelJaeger\EXWin11.bat
 curl https://raw.githubusercontent.com/EasyArt/Win11DesignSwitch/main/CMWin10.bat > C:\RaphaelJaeger\CMWin10.bat
 curl https://raw.githubusercontent.com/EasyArt/Win11DesignSwitch/main/CMWin11.bat > C:\RaphaelJaeger\CMWin11.bat
 curl https://raw.githubusercontent.com/EasyArt/Win11DesignSwitch/main/uninstaller.bat > C:\RaphaelJaeger\uninstaller.bat
-reg import C:\RaphaelJaeger\Win11DesignSwitch.reg
+regedit.exe /s C:\RaphaelJaeger\Win11DesignSwitch.reg
 goto end
 
 
 :uninstall
 cls
-CALL C:\RaphaelJaeger\uninstall.bat
+CALL C:\RaphaelJaeger\uninstaller.bat
 reg.exe delete "HKCR\Directory\Background\shell\Win11DesignSwitch" /f
+timeout /t 3
 if exist "C:\RaphaelJaeger\" rd /s /q "C:\RaphaelJaeger"
 goto end
 
 :end
 echo Program Stop
+PAUSE
