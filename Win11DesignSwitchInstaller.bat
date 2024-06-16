@@ -56,6 +56,7 @@ cls
 echo "Installing Context Menu Switch"
 if not exist "C:\RaphaelJaeger" mkdir "C:\RaphaelJaeger"
 curl https://raw.githubusercontent.com/EasyArt/Win11DesignSwitch/main/Win11DesignSwitch.reg > C:\RaphaelJaeger\Win11DesignSwitch.reg
+curl https://raw.githubusercontent.com/EasyArt/Win11DesignSwitch/main/EXWin10.reg > C:\RaphaelJaeger\EXWin10.reg
 curl https://raw.githubusercontent.com/EasyArt/Win11DesignSwitch/main/EXWin10.bat > C:\RaphaelJaeger\EXWin10.bat
 curl https://raw.githubusercontent.com/EasyArt/Win11DesignSwitch/main/EXWin11.bat > C:\RaphaelJaeger\EXWin11.bat
 curl https://raw.githubusercontent.com/EasyArt/Win11DesignSwitch/main/CMWin10.bat > C:\RaphaelJaeger\CMWin10.bat
